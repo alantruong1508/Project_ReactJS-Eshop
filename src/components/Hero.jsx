@@ -58,7 +58,7 @@ export default function Hero() {
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
                       {data.title}
                     </h1>
-                    <h1 className="text-5xl uppercase text-white dark:text-white/5 sm:text[80px] md:text-[100px] xl:text-[150px] font-bold">
+                    <h1 className="text-5xl uppercase text-white dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold">
                       {data.title2}
                     </h1>
                     <div>
