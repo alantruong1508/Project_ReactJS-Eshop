@@ -49,7 +49,7 @@ export default function Category() {
             />
           </div>
           {/* cột 3 */}
-          <div className="py-10 pl-5 bg-gradient-to-br from-primary to-primary/90 text-white rounded-3xl relative h-[320px] flex items-end col-span-2">
+          <div className="py-10 pl-5 bg-gradient-to-br from-primary to-primary/90 text-white rounded-3xl relative h-[320px] flex items-end sm:col-span-2">
             <div>
               <div className="mb-4">
                 <p className="mb-[2px] text-white">Enjoy</p>
