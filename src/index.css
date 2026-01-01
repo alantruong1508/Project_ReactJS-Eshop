@@ -46,3 +46,9 @@
 html {
   transition: 1s;
 }
+
+/* ấn các vùng chứa to hơn size của thẻ body */
+body,
+html {
+  overflow-x: hidden;
+}
