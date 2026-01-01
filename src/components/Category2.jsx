@@ -27,7 +27,7 @@ export default function Category2() {
             <img
               src={Image1}
               alt=""
-              className="w-[320px] absolute top-1/2 -translate-y-1/2 -right-0"
+              className="w-[320px] absolute top-1/3 sm:top-1/2 -translate-y-1/2 -right-0 scale-53 sm:scale-100"
             />
           </div>
           {/* cột 2 */}

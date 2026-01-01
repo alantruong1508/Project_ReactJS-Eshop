@@ -67,7 +67,7 @@ export default function Category() {
             <img
               src={Image3}
               alt=""
-              className="w-[320px] absolute top-1/2 -translate-y-1/2 -right-0"
+              className="w-[320px] absolute top-1/3 sm:top-1/2 -translate-y-1/2 -right-5 scale-80 sm:scale-100"
             />
           </div>
         </div>
