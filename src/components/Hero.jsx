@@ -72,7 +72,7 @@ export default function Hero() {
                       data-aos="zoom-out"
                       data-aos-duration="500"
                       data-aos-once="true"
-                      className="text-5xl uppercase text-white dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold"
+                      className="text-4xl uppercase text-white dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold"
                     >
                       {data.title2}
                     </h1>
