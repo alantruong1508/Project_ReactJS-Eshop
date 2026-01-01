@@ -1,6 +1,8 @@
-import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
+import { FaBars, FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import { IoMdSearch } from "react-icons/io";
 import DarkMode from "./DarkMode";
+import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 
 const MenuLinks = [
   {
@@ -44,19 +46,67 @@ const DropdownLinks = [
 ];
 
 export default function Navbar() {
+  // useState để quản lý trạng thái đóng/mở của thanh navbar trên thiết bị di động
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       <div className="py-4">
         <div className="container mx-auto px-4 flex justify-between items-center ">
           {/* logo và các thẻ link bên trái */}
           <div className="flex items-center gap-4">
-            {/* logo Eshop */}
-            <a
-              href="#"
-              className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
+            <div className="flex items-center gap-4">
+              {/* logo Eshop */}
+              <a
+                href="#"
+                className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
+              >
+                Eshop
+              </a>
+
+              {/* Hamburger Icon (Chỉ hiện trên mobile < sm) */}
+              <div
+                className="lg:hidden text-neutral-500"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                {menuOpen ? <FaTimes size={25} /> : <FaBars size={25} />}
+              </div>
+            </div>
+
+            {/* Mobile Dropdown Box */}
+            {/* Hiển thị dựa trên trạng thái menuOpen và chỉ ở màn hình nhỏ */}
+            <div
+              className={`${
+                menuOpen ? "block" : "hidden"
+              } lg:hidden absolute top-full left-0 w-full shadow-md py-4 flex flex-col items-center gap-4 bg-white`}
             >
-              Eshop
-            </a>
+              <ul className="flex flex-col items-center gap-4 text-neutral-500">
+                <li className="rounded-md hover:bg-primary/20 px-4 block w-[100px] text-center">
+                  <a href="/" onClick={() => setMenuOpen(false)}>
+                    Home
+                  </a>
+                </li>
+                <li className="rounded-md hover:bg-primary/20 px-4 block w-[100px] text-center">
+                  <a href="/shop" onClick={() => setMenuOpen(false)}>
+                    Shop
+                  </a>
+                </li>
+                <li className="rounded-md hover:bg-primary/20 px-4 block w-[100px] text-center">
+                  <a href="/about" onClick={() => setMenuOpen(false)}>
+                    About
+                  </a>
+                </li>
+              </ul>
+              <div className="relative group sm:hidden">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="search-bar"
+                />
+                <IoMdSearch className="text-xl text-gray-600 group-hover:text-primary dark:text-gray-400 absolute top-1/2 -translate-y-1/2 right-3 duration-200" />
+              </div>
+            </div>
+
             {/* các thẻ menu link */}
             <div className="hidden lg:block">
               <ul className="flex items-center gap-4">
